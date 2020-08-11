@@ -1,4 +1,5 @@
 let history = [];
+let Sources = [];
 var nIntervId;
 var textByLine;
 var index = 0;
@@ -12,7 +13,7 @@ $(document).ready(function () {
         pause = false;
     });
     
-    let Sources = sources();
+    Sources = sources();
     console.log(Sources);
     slideshow();
 
