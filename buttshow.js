@@ -11,7 +11,7 @@ $(document).ready(function () {
         $('#pause').hide();
         pause = false;
     });
-    
+    console.log(sources);
     slideshow();
 
 });
