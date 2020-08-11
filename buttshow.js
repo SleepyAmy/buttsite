@@ -11,7 +11,9 @@ $(document).ready(function () {
         $('#pause').hide();
         pause = false;
     });
-    console.log(sources);
+    
+    let Sources = sources():
+    console.log(Sources);
     slideshow();
 
 });
@@ -88,8 +90,8 @@ function slideshow(Source) {
     if (!Source) {
         if (index >= history.length) {
             index++;
-            var i = getRandomInt(sources.length);
-            var source = sources[i];
+            var i = getRandomInt(Sources.length);
+            var source = Sources[i];
             history.push(source);
         }
     } else {
