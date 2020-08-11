@@ -12,7 +12,7 @@ $(document).ready(function () {
         pause = false;
     });
     
-    let Sources = sources():
+    let Sources = sources();
     console.log(Sources);
     slideshow();
 
