@@ -11,6 +11,8 @@ $(document).ready(function () {
         $('#pause').hide();
         pause = false;
     });
+    
+    slideshow();
 
 });
 
