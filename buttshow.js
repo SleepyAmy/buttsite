@@ -3,7 +3,7 @@ var nIntervId;
 var textByLine;
 var index = 0;
 var pause = false;
-var sources = require("./sources");
+import { sources } from './sources.js';
 
 $(document).ready(function () {
 
