@@ -88,7 +88,7 @@ $(document).keyup(function (e) {
 });
 
 function slideshow(Source) {
-    if (!Source|| Source == "undefined") {
+    if (!Source|| source == "undefined") {
         if (index >= history.length) {
             index++;
             var i = getRandomInt(Sources.length);
