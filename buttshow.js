@@ -13,7 +13,7 @@ $(document).ready(function () {
         pause = false;
     });
     
-    Sources = sources();
+    Sources = sources;
     console.log(Sources);
     slideshow();
 
@@ -23,11 +23,11 @@ $(document).keyup(function (e) {
     switch (e.keyCode) { // next
         case 39:
             clearTimeout(nIntervId);
-            if (index >= history.length && index > 0) {
+            if (index+1 >= history.length && index > 0) {
                 slideshow();
             } else {
                 index++;
-                slideshow(history[index - 1]);
+                slideshow(history[index]);
             }
             break;
 
@@ -37,8 +37,9 @@ $(document).keyup(function (e) {
             if (index > 0) {
                 console.log("prev");
                 console.log(index);
+                console.log(history);
                 index--;
-                slideshow(history[index - 1]);
+                slideshow(history[index]);
             }
             break;
             // esc
@@ -47,6 +48,7 @@ $(document).keyup(function (e) {
             $('#myiframe').hide();
             $('#ass').show();
             clearTimeout(nIntervId);
+            location.href = "ImageGrid.html";
             break;
             // a
         // case 65:
@@ -87,20 +89,30 @@ $(document).keyup(function (e) {
     }
 });
 
-function slideshow(Source) {
-    if (!Source|| source == "undefined") {
-        if (index >= history.length) {
+function slideshow(Source)
+{
+    console.log("test " + index);
+
+    if (!Source)
+    {
+        if (index+1 >= history.length)
+        {
             index++;
             var i = getRandomInt(Sources.length);
             var source = Sources[i];
             history.push(source);
+        }
+        else
+        {
+            source = history[index]
+            index++;
         }
     } else {
         source = Source;
     }
 
     console.log(source);
-    console.log(history);
+    //console.log(history);
 
     loadsource(source);
 }
