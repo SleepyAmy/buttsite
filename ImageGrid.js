@@ -11,7 +11,7 @@ import { sources } from './sources.js';
 
 $(document).ready(function ()
 {
-    
+    console.log(sources);
     images = sources;
         
         //console.log(images);
