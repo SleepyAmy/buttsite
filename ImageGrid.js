@@ -309,7 +309,7 @@ function addimageRow(images, offset)
 function addImageToColumn(images,offset,columnNumber)
 {
     var Column = document.getElementById('column' + columnNumber);
-    image = images[offset];
+    var image = images[offset];
 
     if (image.includes('mp4'))
     {
